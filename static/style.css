@@ -1,0 +1,145 @@
+/* static/style.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInBody 1s ease-in;
+}
+
+@keyframes fadeInBody {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 2rem;
+    animation: slideFadeIn 1s ease forwards;
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    animation: scaleIn 0.8s ease-in-out;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+select.form-select, .form-check-input {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+button.btn-primary {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.4s, transform 0.3s;
+}
+
+button.btn-primary:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    transform: translateY(-3px) scale(1.05);
+}
+
+.table-responsive {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInTable 1s ease forwards;
+}
+
+@keyframes fadeInTable {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+th, td {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.95rem;
+    background-color: #09214d;
+    color: #ffffff;
+}
+
+thead {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    color: #2c3e50;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e0e7ff;
+    transition: background-color 0.3s;
+}
+
+.alert {
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+#loader {
+    background: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.spinner-border {
+    width: 5rem;
+    height: 5rem;
+}
+
+@media (max-width: 768px) {
+    .form-select, .form-check {
+        margin-bottom: 1rem;
+    }
+}
