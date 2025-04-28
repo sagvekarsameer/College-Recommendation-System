@@ -82,14 +82,14 @@ def index():
         if selected_location and selected_location != 'All':
             user_profile += selected_location.strip()
 
-        # Start with full DataFrame
+        
         filtered_df = df.copy()
 
-        # Apply course filter
+        
         if selected_course and selected_course != 'All':
             filtered_df = filtered_df[filtered_df[course_col].str.contains(selected_course, case=False, na=False)]
 
-        # Apply location filter
+        
         if selected_location and selected_location != 'All':
             filtered_df = filtered_df[filtered_df[location_col].str.lower() == selected_location.lower()]
 
