@@ -13,17 +13,17 @@ logging.basicConfig(level=logging.DEBUG)
 # Load and clean the dataset
 df = pd.read_csv("College_data.csv")
 
-# Important columns to clean
+
 important_columns = ['Course', 'Courses', 'City']
 
 for col in important_columns:
     if col in df.columns:
         df[col] = df[col].fillna('').astype(str).str.strip()
 
-# Remove duplicates
+
 df = df.drop_duplicates()
 
-# Column mapping
+# mapping
 course_col = 'Course' if 'Course' in df.columns else 'Courses'
 location_col = 'City'
 
@@ -34,7 +34,7 @@ priority_columns = {
     'cost_efficiency_score': 'Cost_Efficiency_Score'
 }
 
-# Dropdown lists
+# Dropdown
 course_list = sorted(set(course.strip() for sublist in df[course_col].dropna().str.split(',') for course in sublist))
 location_list = sorted(df[location_col].dropna().unique().tolist())
 
